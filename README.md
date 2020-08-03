@@ -6,14 +6,14 @@ This includes writing what I call 'humane code'. Code that helps colleagues (inc
 I've taken a lot of info from my career in medical psychology (neurology) and from several books that IMHO should be considered holy in software development, such as Clean Code by Robert C Martin and Domain Driven Design by Eric Evans
 This project is onogoing, to challenge myself to write better code. 
 
-##Content##
+## Content ##
 - General
 - PHP and Symfony
 - Javascript and AngularJS
 - HTML / CSS
 - Git
 
-##General##
+## General ##
 - Try to adhere to the 20/200 rule for methods and classes as much as possible.
 - It is a very good habit to leave files you have worked in in a cleaner state than when you found them. If something annoys you and you can fix it in 5 min, do it.
 - NEVER give variables names like $myArr, $someOb, $obj, $arr, etm. Always use declarative names that explain exactly what the variables contain. If I catch someone doing this, I will personally see to it that they don't get cookies for the rest of the week. I'm a friendly dude and I usually don't resort to this kind of violence. It's that bad. 
@@ -143,7 +143,7 @@ public function winTheOlympics()
 - Always let your editor autoformat your code when you're done working in a file (Ctrl + Alt + L in PhpStorm).
 - Trust me on this, always respect character encodings. If you don't treat them with the respect they deserve, shit will hit the fan and the whole team will debug and rewrite code for 48h+ straight. Especially in multilingual applications. This is a must-read about character encodings for EVERY self-respecting dev: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
 
-##PHP##
+## PHP ##
 
 The PSR and Framework-related coding standards should be followed.
 
@@ -155,7 +155,7 @@ The PSR and Framework-related coding standards should be followed.
 - Use PHP native functions if they are available for the problem you are working on. They are optimized.
 - Strong type all the things. If you can't strong-type in many cases, it's a good sign that your code can be optimized. PHP has received a lot of hate for its typing in the past, IMO that was all legit. Strong types help your brain create a framework for what's going on, indicate intent and ensure no weird weak-typing bugs pop up.
 
-###Operators###
+### Operators ###
 - The ! operator  may only be used in comparisons for native php functions that explicitly return true or false. In all other cases (e.g. our own comparisons or 3rd party comparisons), === should always be used. IMO this is true for any weakly typed language. It prevents long nights debugging.
 ```
 <?php
@@ -201,7 +201,7 @@ $canCarryCoconut = $airspeedVelocityOfAnUnladenSwallow > 100 && $africanSwallow 
 $canCarryCoconut = $airspeedVelocityOfAnUnladenSwallow > 100 ? true : false;
 ```
 
-###Variables and types###
+### Variables and types ###
 - Variable variables ($$) should never be used in Business code. It obfuscates code and makes it hard to navigate through code. If you still think you should use variable variables, tell me what the following code will output without running it. 
 - Note that I said "Business code" above. This can be an ok feature in meta code, such as ORMs, but even then they should be used with care.
 ``` 
@@ -213,7 +213,7 @@ If you still think these are awesome, let me tell you, you ain't seen shit yet, 
 
 - When dealing with plain strings, use single quotes.
 
-###Functions###
+### Functions ###
 - A function should only do one thing, and do it well.
 - A function name should be a clear description of exactly what it does. 
 - All class methods should be declared either public, private or protected. 
@@ -244,7 +244,7 @@ If you still think these are awesome, let me tell you, you ain't seen shit yet, 
     }
 ```
 
-###Classes###
+### Classes ###
 - 1 file, 1 class. No exceptions.
 - A class should always have a docblock containing a description what it does. This will help your colleague's brain to group info. 
 ```
@@ -282,13 +282,13 @@ class PokemonCatchingService {
 
 ```
 
-##Javascript##
+## Javascript ##
 There is no single coding standard for javascript. I believe the Airbnb JS coding standard includes a lot of common sense and has a neat syntax. 
 - If you use plain javascript, Javascript: the Good Parts by Douglas Crockford is a MUST read. This will help you understand the black magic of the language and improve your code quality greatly.  Yes, it's an old book. Yes, it's still very, very relevant.
 - AirBNB: https://github.com/airbnb/javascript
 
 
-###General###
+### General ###
 - Don't use var. Var is global. As explained earlier, global is bad.
 - Always declare variables explicitly.
 ```
@@ -318,7 +318,7 @@ if (typeof spaceShip === 'undefined')
 - When dealing with plain strings, use single quotes.
 - ```throw new Error();``` may ***only*** be used in a ```try{} catch()``` block.
 
-###Angular Style Guides###
+### Angular Style Guides ###
 The John Papa standard makes great sense and should be followed in all files. See https://github.com/johnpapa/angular-styleguide 
 
 Other styleguides that are useful:
@@ -331,7 +331,7 @@ Other styleguides that are useful:
 - Do not use element ids for styling. Use classes instead. It makes me sad that I still encounter this in 2020+
 - !important must be avoided as much as possible. If you need to fight against your own CSS precedence, you need to refactor. There are, however some cases where your chosen CSS framework needs to be overridden for some kind of design feature. If you use an !important tag, it must always be accompanied by a comment on why it is necessary.
 
-##Git##
+## Git ##
 - Commits should always contain a clear description of what you did or a link to the feature/bug you worked on. Please help your colleagues create a mental framework of what the commit contains.
 ```
 //Good
