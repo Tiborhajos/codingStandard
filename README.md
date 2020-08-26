@@ -325,7 +325,7 @@ Other styleguides that are useful:
 - Todd Motto: https://github.com/toddmotto/angularjs-styleguide 
 - Minko Gechev: https://github.com/mgechev/angularjs-style-guide
 
-##HTML / CSS##
+## HTML / CSS ##
 - Use HTML5 tags wherever possible. Yes, I know you like to abuse ```<div>``` tags. I like it too. But HTML5 tags explain intent and besides make your SEO score higher. If you have many divs, look for better tags to use.
 - The use of element ids should be avoided for styling purposes.
 - Do not use element ids for styling. Use classes instead. It makes me sad that I still encounter this in 2020+
